@@ -13,3 +13,7 @@
 # 3. Did not include a ten second penalty with each wrong answer.
 # 4. Can't restart game after hitting Start. 
 # 5. Start button isn't disabled while game is going
+
+# Links: 
+# https://lukalicheli.github.io/code-quiz/
+# https://github.com/lukalicheli/code-quiz
