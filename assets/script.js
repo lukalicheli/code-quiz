@@ -1,5 +1,3 @@
-
-
 var questionDiv = document.querySelector("#question");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".center");
@@ -52,9 +50,6 @@ function startTimerClick(event) {
         runTimer();
     }
 }
-
-
-
 
 function runTimer () {
 var timeleft = 15;
@@ -127,4 +122,3 @@ questionDiv.addEventListener("click", handleOptionClick);
 startButton.addEventListener("click", startTimerClick);
 //questionDiv.addEventListener("click", startTimerClick);
 startButton.addEventListener("click", showQuestion);
-//showQuestion();
