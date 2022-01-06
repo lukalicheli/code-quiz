@@ -1,6 +1,12 @@
 
 
 var questionDiv = document.querySelector("#question");
+var timerElement = document.querySelector(".timer-count");
+var startButton = document.querySelector(".center");
+var timer;
+var timerCount;
+var right ;
+var wrong ;
 
 var questions = [
   {
@@ -41,11 +47,40 @@ function handleOptionClick(event) {
   }
 }
 
+function startTimerClick(event) {
+    if (event.target.matches(".start-button")) {
+        runTimer();
+    }
+}
+
+
+
+
+function runTimer () {
+var timeleft = 15;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0 ){
+    clearInterval(downloadTimer);
+    timerElement.innerHTML = "Finished";
+    questionDiv.innerHTML = "";
+    showScore();
+  } else {
+    timerElement.innerHTML = timeleft;
+  }
+  timeleft -= 1;
+}, 1000);
+}
+
+function showScore () {
+    questionDiv.innherHTML = "Right: " + right + "Wrong: " + wrong;
+}
+
 function showQuestion() {
     questionDiv.innerHTML = "";
 
   if (questionIdx >= questions.length) {
     alert("No more questions");
+    questionDiv.innerHTML = "";
     return;
   }
 
@@ -76,14 +111,20 @@ function showQuestion() {
     // check if option is the answer
     if (optionText === question.answer) {
       btn.dataset.answer = 1;
+      right++;
     } else {
       btn.dataset.answers = 0;
+      wrong++;
     }
 
     answersDiv.appendChild(btn);
   }
 }
 
+
 // init page
 questionDiv.addEventListener("click", handleOptionClick);
-showQuestion();
+startButton.addEventListener("click", startTimerClick);
+//questionDiv.addEventListener("click", startTimerClick);
+startButton.addEventListener("click", showQuestion);
+//showQuestion();
