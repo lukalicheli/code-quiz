@@ -1,33 +1,16 @@
-
-
 var questionDiv = document.querySelector("#question");
 
 var questions = [
   {
-    prompt: "What does HTML stand for?",
-    options: ["Hot Tamale", "Home Tool Markup Language", "HyperLinks and Text Markup Language", "Hyper Text Markup Language"],
-    answer: "Hyper Text Markup Language",
+    prompt: "What is the color of the sky?",
+    options: ["Red", "Blue", "Green", "Yellow"],
+    answer: "Blue",
   },
   {
-    prompt: "What does CSS stand for?",
-    options: ["Creative Style Sheets", "Computer Style Sheets", "Cascading Style Sheets", "Colorful Style Sheets"],
-    answer: "Cascading Style Sheets",
+    prompt: "Which shape is round?",
+    options: ["Square", "Triangle", "Trapezoid", "Circle"],
+    answer: "Circle",
   },
-  {
-    prompt: "Inside which HTML element do we put the JavaScript?",
-    options: ["<script>", "<scripting>", "<javascript>", "<js>"],
-    answer: "<script>",
-  },
-  {
-    prompt: "The Boostrap grid system works across multiple platforms.",
-    options: ["True", "False"],
-    answer: "True",
-  },
-  {
-    prompt: "Which sign does jQuery use as a shortcut for jQuery?",
-    options: ["The % sign", "The $ sign", "The & sign", "The @ sign"],
-    answer: "The $ sign",
-  }
 ];
 
 var questionIdx = 0;
@@ -42,7 +25,7 @@ function handleOptionClick(event) {
 }
 
 function showQuestion() {
-    questionDiv.innerHTML = "";
+  questionDiv.innerHTML = "";
 
   if (questionIdx >= questions.length) {
     alert("No more questions");
@@ -52,13 +35,12 @@ function showQuestion() {
   var question = questions[questionIdx];
 
   // create h2
-  var h1 = document.createElement("h1");
+  var h2 = document.createElement("h2");
   // set h2 text to question prompt
-  h1.textContent = question.prompt;
+  h2.textContent = question.prompt;
   // append h2 to questionDiv
-  questionDiv.append(h1);
-
-  // create answers div
+  questionDiv.append(h2)
+  create answers div
   var answersDiv = document.createElement("div");
 
   // set class to "answers"
